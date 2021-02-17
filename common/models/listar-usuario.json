@@ -1,0 +1,39 @@
+{
+  "name": "listarUsuario",
+  "plural": "listarUsuario",
+  "base": "Model",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "hidden": [
+    "id"
+  ],
+  "properties": {
+    "correo": {
+      "type": "string",
+      "default": "jdmkrd@gmail.com"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "listarGet": {
+      "accepts": [
+        {
+          "arg": "correo",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "returns": {
+        "root": true
+      },
+      "http": {
+        "path": "/",
+        "verb": "get"
+      }
+    }
+  }
+}
