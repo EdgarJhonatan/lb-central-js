@@ -20,5 +20,9 @@
   "registrarUsuario": {
     "dataSource": "WfPostgres",
     "public": true
+  },
+  "logUsuario": {
+    "dataSource": "WfPostgres",
+    "public": true
   }
 }

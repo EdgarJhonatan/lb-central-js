@@ -1,20 +1,15 @@
 "use strict";
 
-module.exports = function (Registrarusuario) {
-  Registrarusuario.RegistrarusuarioPost = function (data, cb) {
+module.exports = function (Logusuario) {
+  Logusuario.LogusuarioPost = function (data, cb) {
     let bodyJson;
     const main = async () => {
       try {
         console.log(data);
         console.log(`========== Registramos en la Base de datos ==========`);
-        const query = `select * from public.ws_registrar_usuario (
-                    '${data.documento}',
-                    '${data.nombre}',
-                    '${data.apellidoPaterno}',
-                    '${data.apellidoMaterno}',
-                    '${data.email}',
-                    '${data.password}',
-                    '${data.role || "USER_ROLE"}'
+        const query = `select * from public.ws_log_usuario (
+                    ${data.codigoUsuario},
+                    '${data.documento}'
                 );`;
         console.log(query);
         const SC = await consultaBD(query);
@@ -43,7 +38,7 @@ module.exports = function (Registrarusuario) {
         if (reject) {
           console.log(reject);
         }
-        const db = Registrarusuario.dataSource;
+        const db = Logusuario.dataSource;
         db.connector.query(query, function (err, result) {
           if (err) {
             console.log(err);

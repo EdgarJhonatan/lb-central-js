@@ -1,15 +1,16 @@
 {
-  "name": "listarUsuario",
-  "plural": "listarUsuario",
+  "name": "logUsuario",
+  "plural": "logUsuario",
   "base": "Model",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
-  "hidden": [
-    "id"
-  ],
   "properties": {
+    "codigoUsuario": {
+      "type": "integer",
+      "default": "1"
+    },
     "documento": {
       "type": "string",
       "default": "46746907"
@@ -19,12 +20,14 @@
   "relations": {},
   "acls": [],
   "methods": {
-    "listarGet": {
+    "LogusuarioPost": {
       "accepts": [
         {
-          "arg": "documento",
-          "type": "string",
-          "required": true
+          "arg": "data",
+          "type": "object",
+          "http": {
+            "source": "body"
+          }
         }
       ],
       "returns": {
@@ -32,7 +35,7 @@
       },
       "http": {
         "path": "/",
-        "verb": "get"
+        "verb": "post"
       }
     }
   }
