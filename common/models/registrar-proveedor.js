@@ -1,17 +1,22 @@
 "use strict";
 
-module.exports = function (registrarSucursal) {
-  registrarSucursal.registrarSucursalPost = function (data, cb) {
+module.exports = function (registrarProveedor) {
+  registrarProveedor.registrarProveedorPost = function (data, cb) {
     let bodyJson;
     const main = async () => {
       try {
         console.log(data);
         console.log(`========== Registramos en la Base de datos ==========`);
-        const query = `select * from public.ws_crud_sucursal (
-                        '${data.sucursal}',
-                        '${data.direccionSucursal}',
-                        '${data.tipoAccion}'
-                    );`;
+        const query = `select * from public.ws_crud_proveedor (
+                            '${data.rucProveedor}',
+                            '${data.razonSocial}',
+                            '${data.telefonoProveedor}',
+                            '${data.direccionProveedor}',
+                            '${data.vendedor}',
+                            '${data.telefonoVendedor}',
+                            '${data.usuario}',
+                            '${data.tipoAccion}'
+                        );`;
         console.log(query);
         const SC = await consultaBD(query);
         console.log(SC);
@@ -43,7 +48,7 @@ module.exports = function (registrarSucursal) {
         if (reject) {
           console.log(reject);
         }
-        const db = registrarSucursal.dataSource;
+        const db = registrarProveedor.dataSource;
         db.connector.query(query, function (err, result) {
           if (err) {
             console.log(err);

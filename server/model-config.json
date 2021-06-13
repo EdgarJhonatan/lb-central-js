@@ -40,5 +40,21 @@
   "listarArticulo": {
     "dataSource": "WfPostgres",
     "public": true
+  },
+  "registrarProducto": {
+    "dataSource": "WfPostgres",
+    "public": true
+  },
+  "listarProducto": {
+    "dataSource": "WfPostgres",
+    "public": true
+  },
+  "registrarProveedor": {
+    "dataSource": "WfPostgres",
+    "public": true
+  },
+  "listarProveedor": {
+    "dataSource": "WfPostgres",
+    "public": true
   }
 }

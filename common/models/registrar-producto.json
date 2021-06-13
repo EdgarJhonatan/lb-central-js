@@ -1,18 +1,23 @@
 {
-  "name": "listarArticulo",
-  "plural": "listarArticulo",
+  "name": "registrarProducto",
+  "plural": "registrarProducto",
   "base": "Model",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
-  "hidden": [
-    "id"
-  ],
   "properties": {
+    "producto": {
+      "type": "string",
+      "default": "producto 2"
+    },
     "articulo": {
       "type": "string",
-      "default": "46746907"
+      "default": "1"
+    },
+    "usuario": {
+      "type": "string",
+      "default": "2"
     },
     "tipoAccion": {
       "type": "string",
@@ -23,15 +28,14 @@
   "relations": {},
   "acls": [],
   "methods": {
-    "listarGet": {
+    "registrarProductoPost": {
       "accepts": [
         {
-          "arg": "articulo",
-          "type": "string"
-        },
-        {
-          "arg": "tipoAccion",
-          "type": "string"
+          "arg": "data",
+          "type": "object",
+          "http": {
+            "source": "body"
+          }
         }
       ],
       "returns": {
@@ -39,7 +43,7 @@
       },
       "http": {
         "path": "/",
-        "verb": "get"
+        "verb": "post"
       }
     }
   }

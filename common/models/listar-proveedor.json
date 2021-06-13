@@ -1,6 +1,6 @@
 {
-  "name": "listarArticulo",
-  "plural": "listarArticulo",
+  "name": "listarProveedor",
+  "plural": "listarProveedor",
   "base": "Model",
   "idInjection": true,
   "options": {
@@ -10,7 +10,7 @@
     "id"
   ],
   "properties": {
-    "articulo": {
+    "documento": {
       "type": "string",
       "default": "46746907"
     },
@@ -26,7 +26,7 @@
     "listarGet": {
       "accepts": [
         {
-          "arg": "articulo",
+          "arg": "documento",
           "type": "string"
         },
         {

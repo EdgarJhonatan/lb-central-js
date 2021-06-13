@@ -1,21 +1,37 @@
 {
-  "name": "registrarSucursal",
-  "plural": "registrarSucursal",
+  "name": "registrarProveedor",
+  "plural": "registrarProveedor",
   "base": "Model",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "sucursal": {
+    "rucProveedor": {
       "type": "string",
-      "default": "principal"
+      "default": "201014121512"
     },
-    "direccionSucursal": {
+    "razonSocial": {
       "type": "string",
-      "default": "principal"
+      "default": "proveedor prueba"
     },
-    "tipoAccion": {
+    "telefonoProveedor": {
+      "type": "string",
+      "default": "974585478"
+    },
+    "direccionProveedor": {
+      "type": "string",
+      "default": "direccion de prueba"
+    },
+    "vendedor": {
+      "type": "string",
+      "default": "juan perez"
+    },
+    "telefonoVendedor": {
+      "type": "string",
+      "default": "985478547"
+    },
+    "usuario": {
       "type": "string",
       "default": "1"
     }
@@ -24,7 +40,7 @@
   "relations": {},
   "acls": [],
   "methods": {
-    "registrarSucursalPost": {
+    "registrarProveedorPost": {
       "accepts": [
         {
           "arg": "data",

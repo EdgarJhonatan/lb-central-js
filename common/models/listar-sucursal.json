@@ -6,10 +6,13 @@
   "options": {
     "validateUpsert": true
   },
+  "hidden": [
+    "id"
+  ],
   "properties": {
     "sucursal": {
       "type": "string",
-      "default": "tienda huaral"
+      "default": "46746907"
     },
     "tipoAccion": {
       "type": "string",
