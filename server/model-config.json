@@ -64,5 +64,21 @@
   "listarCliente": {
     "dataSource": "WfPostgres",
     "public": true
+  },
+  "registrarEntidadFinanciera": {
+    "dataSource": "WfPostgres",
+    "public": true
+  },
+  "listarEntidadFinanciera": {
+    "dataSource": "WfPostgres",
+    "public": true
+  },
+  "registarCuentaFinanciera": {
+    "dataSource": "WfPostgres",
+    "public": true
+  },
+  "listarCuentaFinanciera": {
+    "dataSource": "WfPostgres",
+    "public": true
   }
 }

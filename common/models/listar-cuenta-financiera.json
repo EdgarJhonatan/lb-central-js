@@ -1,0 +1,46 @@
+{
+  "name": "listarCuentaFinanciera",
+  "plural": "listarCuentaFinanciera",
+  "base": "Model",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "hidden": [
+    "id"
+  ],
+  "properties": {
+    "cuenta": {
+      "type": "string",
+      "default": "46746907"
+    },
+    "tipoAccion": {
+      "type": "string",
+      "default": "1"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "listarGet": {
+      "accepts": [
+        {
+          "arg": "articulo",
+          "type": "string"
+        },
+        {
+          "arg": "tipoAccion",
+          "type": "string"
+        }
+      ],
+      "returns": {
+        "root": true
+      },
+      "http": {
+        "path": "/",
+        "verb": "get"
+      }
+    }
+  }
+}

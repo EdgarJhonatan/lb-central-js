@@ -1,0 +1,54 @@
+{
+  "name": "registarCuentaFinanciera",
+  "plural": "registarCuentaFinanciera",
+  "base": "Model",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "cuenta": {
+      "type": "string",
+      "default": "124578875421"
+    },
+    "cuentaInterbancaria": {
+      "type": "string",
+      "default": "1245788754212222"
+    },
+    "codigoEntidad": {
+      "type": "string",
+      "default": "1"
+    },
+    "usuario": {
+      "type": "string",
+      "default": "1"
+    },
+    "tipoAccion": {
+      "type": "string",
+      "default": "1"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "registarCuentaFinancieraPost": {
+      "accepts": [
+        {
+          "arg": "data",
+          "type": "object",
+          "http": {
+            "source": "body"
+          }
+        }
+      ],
+      "returns": {
+        "root": true
+      },
+      "http": {
+        "path": "/",
+        "verb": "post"
+      }
+    }
+  }
+}

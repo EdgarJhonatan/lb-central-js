@@ -1,0 +1,46 @@
+{
+  "name": "registrarEntidadFinanciera",
+  "plural": "registrarEntidadFinanciera",
+  "base": "Model",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "entidad": {
+      "type": "string",
+      "default": "interbank"
+    },
+    "usuario": {
+      "type": "string",
+      "default": "2"
+    },
+    "tipoAccion": {
+      "type": "string",
+      "default": "1"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "registrarEntidadFinancieraPost": {
+      "accepts": [
+        {
+          "arg": "data",
+          "type": "object",
+          "http": {
+            "source": "body"
+          }
+        }
+      ],
+      "returns": {
+        "root": true
+      },
+      "http": {
+        "path": "/",
+        "verb": "post"
+      }
+    }
+  }
+}
