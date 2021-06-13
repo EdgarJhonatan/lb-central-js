@@ -1,0 +1,43 @@
+{
+  "name": "listarCliente",
+  "plural": "listarCliente",
+  "base": "Model",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "documento": {
+      "type": "string",
+      "default": "46746907"
+    },
+    "tipoAccion": {
+      "type": "string",
+      "default": "1"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "listarGet": {
+      "accepts": [
+        {
+          "arg": "documento",
+          "type": "string"
+        },
+        {
+          "arg": "tipoAccion",
+          "type": "string"
+        }
+      ],
+      "returns": {
+        "root": true
+      },
+      "http": {
+        "path": "/",
+        "verb": "get"
+      }
+    }
+  }
+}

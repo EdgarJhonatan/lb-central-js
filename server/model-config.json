@@ -56,5 +56,13 @@
   "listarProveedor": {
     "dataSource": "WfPostgres",
     "public": true
+  },
+  "registrarCliente": {
+    "dataSource": "WfPostgres",
+    "public": true
+  },
+  "listarCliente": {
+    "dataSource": "WfPostgres",
+    "public": true
   }
 }

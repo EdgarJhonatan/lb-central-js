@@ -1,35 +1,27 @@
 {
-  "name": "registrarProveedor",
-  "plural": "registrarProveedor",
+  "name": "registrarCliente",
+  "plural": "registrarCliente",
   "base": "Model",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "rucProveedor": {
+    "rucCliente": {
       "type": "string",
       "default": "201014121512"
     },
     "razonSocial": {
       "type": "string",
-      "default": "proveedor prueba"
+      "default": "cliente prueba"
     },
-    "telefonoProveedor": {
+    "telefonoCliente": {
       "type": "string",
       "default": "974585478"
     },
-    "direccionProveedor": {
+    "direccionCliente": {
       "type": "string",
       "default": "direccion de prueba"
-    },
-    "vendedor": {
-      "type": "string",
-      "default": "juan perez"
-    },
-    "telefonoVendedor": {
-      "type": "string",
-      "default": "985478547"
     },
     "usuario": {
       "type": "string",
@@ -44,7 +36,7 @@
   "relations": {},
   "acls": [],
   "methods": {
-    "registrarProveedorPost": {
+    "registrarClientePost": {
       "accepts": [
         {
           "arg": "data",
