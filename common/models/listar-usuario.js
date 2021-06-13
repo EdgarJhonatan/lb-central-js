@@ -1,24 +1,33 @@
 "use strict";
 
 module.exports = function (listarUsuario) {
-  listarUsuario.listarGet = function (data, cb) {
+  listarUsuario.listarGet = function (documento, tipoAccion, cb) {
     const main = async () => {
       try {
-        console.log(data);
+        console.log(documento, tipoAccion);
         var bodyJson;
         console.log(`========== Consultamos a la Base de datos  ==========`);
-        const query = `select * from public.tbusuari where co_docide = '${data}';`;
+        const query = `select * from public.ws_listar_usuario ('${documento}', '${tipoAccion}');`;
         console.log(query);
-        const respQuery = await consultaBD(query);
-        console.log(respQuery);
-        if (JSON.stringify(respQuery) == "[]") {
-          bodyJson = {
-            codRes: "02",
-            message: "No se encontró ningún registro.",
-          };
+        const SC = await consultaBD(query);
+        console.log(SC);
+        if (SC == null) {
+          bodyJson = { codRes: "99", message: "Error interno" };
         } else {
-          bodyJson = { codRes: "00", message: "OK", data: respQuery };
+          if (SC[0].co_estado == "99") {
+            bodyJson = { codRes: "99", message: SC[0].no_estado, data: null };
+          } else if (SC[0].co_estado == "01") {
+            bodyJson = { codRes: "01", message: SC[0].no_estado, data: null };
+          } else {
+            bodyJson = {
+              codRes: "00",
+              message: SC[0].no_estado,
+              data: SC[0].js_resdat,
+            };
+          }
         }
+
+        console.log(bodyJson);
         cb(null, bodyJson);
       } catch (error) {
         console.log(error.message);

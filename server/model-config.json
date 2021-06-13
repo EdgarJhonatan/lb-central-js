@@ -24,5 +24,21 @@
   "logUsuario": {
     "dataSource": "WfPostgres",
     "public": true
+  },
+  "listarSucursal": {
+    "dataSource": "WfPostgres",
+    "public": true
+  },
+  "registrarSucursal": {
+    "dataSource": "WfPostgres",
+    "public": true
+  },
+  "registrarArticulo": {
+    "dataSource": "WfPostgres",
+    "public": true
+  },
+  "listarArticulo": {
+    "dataSource": "WfPostgres",
+    "public": true
   }
 }

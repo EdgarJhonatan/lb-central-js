@@ -1,18 +1,15 @@
 {
-  "name": "listarUsuario",
-  "plural": "listarUsuario",
+  "name": "listarSucursal",
+  "plural": "listarSucursal",
   "base": "Model",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
-  "hidden": [
-    "id"
-  ],
   "properties": {
-    "documento": {
+    "sucursal": {
       "type": "string",
-      "default": "46746907"
+      "default": "tienda huaral"
     },
     "tipoAccion": {
       "type": "string",
@@ -26,7 +23,7 @@
     "listarGet": {
       "accepts": [
         {
-          "arg": "documento",
+          "arg": "sucursal",
           "type": "string"
         },
         {

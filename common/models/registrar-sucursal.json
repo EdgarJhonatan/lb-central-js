@@ -1,43 +1,23 @@
 {
-  "name": "registrarUsuario",
-  "plural": "registrarUsuario",
+  "name": "registrarSucursal",
+  "plural": "registrarSucursal",
   "base": "Model",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "documento": {
-      "type": "string",
-      "default": "46746908"
-    },
-    "nombre": {
-      "type": "string",
-      "default": "Juan Daniel"
-    },
-    "apellidoPaterno": {
-      "type": "string",
-      "default": "Perez"
-    },
-    "apellidoMaterno": {
-      "type": "string",
-      "default": "Mauricio"
-    },
-    "email": {
-      "type": "string",
-      "default": "juan@gmail.com"
-    },
-    "password": {
-      "type": "string",
-      "default": "123456"
-    },
-    "role": {
-      "type": "string",
-      "default": ""
-    },
     "sucursal": {
       "type": "string",
-      "default": "1"
+      "default": "tienda lima"
+    },
+    "direccionSucursal": {
+      "type": "string",
+      "default": "torre blanca"
+    },
+    "usuario": {
+      "type": "string",
+      "default": "2"
     },
     "tipoAccion": {
       "type": "string",
@@ -48,7 +28,7 @@
   "relations": {},
   "acls": [],
   "methods": {
-    "RegistrarusuarioPost": {
+    "registrarSucursalPost": {
       "accepts": [
         {
           "arg": "data",

@@ -1,23 +1,13 @@
 "use strict";
 
-module.exports = function (Registrarusuario) {
-  Registrarusuario.RegistrarusuarioPost = function (data, cb) {
-    let bodyJson;
+module.exports = function (listarSucursal) {
+  listarSucursal.listarGet = function (sucursal, tipoAccion, cb) {
     const main = async () => {
       try {
-        console.log(data);
-        console.log(`========== Registramos en la Base de datos ==========`);
-        const query = `select * from public.ws_crud_usuario (
-                    '${data.documento}',
-                    '${data.nombre}',
-                    '${data.apellidoPaterno}',
-                    '${data.apellidoMaterno}',
-                    '${data.email}',
-                    '${data.password}',
-                    '${data.role || "USER_ROLE"}',
-                    '${data.sucursal}',
-                    '${data.tipoAccion}'
-                );`;
+        console.log(sucursal, tipoAccion);
+        var bodyJson;
+        console.log(`========== Consultamos a la Base de datos  ==========`);
+        const query = `select * from public.ws_listar_sucursal ('${sucursal}', '${tipoAccion}');`;
         console.log(query);
         const SC = await consultaBD(query);
         console.log(SC);
@@ -36,9 +26,16 @@ module.exports = function (Registrarusuario) {
             };
           }
         }
+
+        console.log(bodyJson);
         cb(null, bodyJson);
       } catch (error) {
-        console.log(error);
+        console.log(error.message);
+        bodyJson = {
+          codRes: "99",
+          data: error.message,
+        };
+        cb(null, bodyJson);
       }
     };
 
@@ -49,7 +46,7 @@ module.exports = function (Registrarusuario) {
         if (reject) {
           console.log(reject);
         }
-        const db = Registrarusuario.dataSource;
+        const db = listarSucursal.dataSource;
         db.connector.query(query, function (err, result) {
           if (err) {
             console.log(err);

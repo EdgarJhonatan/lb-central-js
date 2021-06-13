@@ -1,18 +1,19 @@
 {
-  "name": "listarUsuario",
-  "plural": "listarUsuario",
+  "name": "registrarArticulo",
+  "plural": "registrarArticulo",
   "base": "Model",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
-  "hidden": [
-    "id"
-  ],
   "properties": {
-    "documento": {
+    "articulo": {
       "type": "string",
-      "default": "46746907"
+      "default": "articulo 2"
+    },
+    "usuario": {
+      "type": "string",
+      "default": "2"
     },
     "tipoAccion": {
       "type": "string",
@@ -23,15 +24,14 @@
   "relations": {},
   "acls": [],
   "methods": {
-    "listarGet": {
+    "registrarArticuloPost": {
       "accepts": [
         {
-          "arg": "documento",
-          "type": "string"
-        },
-        {
-          "arg": "tipoAccion",
-          "type": "string"
+          "arg": "data",
+          "type": "object",
+          "http": {
+            "source": "body"
+          }
         }
       ],
       "returns": {
@@ -39,7 +39,7 @@
       },
       "http": {
         "path": "/",
-        "verb": "get"
+        "verb": "post"
       }
     }
   }
