@@ -1,13 +1,15 @@
 "use strict";
 
 module.exports = function (listarUsuario) {
-  listarUsuario.listarGet = function (documento, tipoAccion, cb) {
+  listarUsuario.listarGet = function (usuario, tipoAccion, cb) {
     const main = async () => {
       try {
-        console.log(documento, tipoAccion);
+        usuario = usuario === undefined ? "" : usuario;
+
+        console.log(usuario, tipoAccion);
         var bodyJson;
         console.log(`========== Consultamos a la Base de datos  ==========`);
-        const query = `select * from public.ws_listar_usuario ('${documento}', '${tipoAccion}');`;
+        const query = `select * from public.ws_listar_usuario ('${usuario}', '${tipoAccion}');`;
         console.log(query);
         const SC = await consultaBD(query);
         console.log(SC);

@@ -7,6 +7,10 @@
     "validateUpsert": true
   },
   "properties": {
+    "usuario": {
+      "type": "string",
+      "default": ""
+    },
     "documento": {
       "type": "string",
       "default": "46746908"

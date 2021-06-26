@@ -10,9 +10,9 @@
     "id"
   ],
   "properties": {
-    "documento": {
+    "usuario": {
       "type": "string",
-      "default": "46746907"
+      "default": ""
     },
     "tipoAccion": {
       "type": "string",
@@ -26,7 +26,7 @@
     "listarGet": {
       "accepts": [
         {
-          "arg": "documento",
+          "arg": "usuario",
           "type": "string"
         },
         {
