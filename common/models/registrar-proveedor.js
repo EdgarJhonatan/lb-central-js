@@ -8,6 +8,7 @@ module.exports = function (registrarProveedor) {
         console.log(data);
         console.log(`========== Registramos en la Base de datos ==========`);
         const query = `select * from public.ws_crud_proveedor (
+                            '${data.codigo}',
                             '${data.rucProveedor}',
                             '${data.razonSocial}',
                             '${data.telefonoProveedor}',

@@ -7,6 +7,10 @@
     "validateUpsert": true
   },
   "properties": {
+    "codigo": {
+      "type": "string",
+      "default": ""
+    },
     "cuenta": {
       "type": "string",
       "default": "124578875421"

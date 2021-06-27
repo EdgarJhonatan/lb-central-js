@@ -8,6 +8,7 @@ module.exports = function (registrarSucursal) {
         console.log(data);
         console.log(`========== Registramos en la Base de datos ==========`);
         const query = `select * from public.ws_crud_sucursal (
+                        '${data.codigo}',
                         '${data.sucursal}',
                         '${data.direccionSucursal}',
                         '${data.tipoAccion}'

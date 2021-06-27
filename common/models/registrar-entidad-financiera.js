@@ -11,6 +11,7 @@ module.exports = function (registrarEntidadFinanciera) {
         console.log(data);
         console.log(`========== Registramos en la Base de datos ==========`);
         const query = `select * from public.ws_crud_entidadFinanciera (
+                                '${data.codigo}',
                                 '${data.entidad}',
                                 '${data.usuario}',
                                 '${data.tipoAccion}'

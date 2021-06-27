@@ -7,6 +7,10 @@
     "validateUpsert": true
   },
   "properties": {
+    "codigo": {
+      "type": "string",
+      "default": ""
+    },
     "rucProveedor": {
       "type": "string",
       "default": "201014121512"

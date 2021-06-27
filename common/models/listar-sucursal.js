@@ -1,13 +1,14 @@
 "use strict";
 
-module.exports = function (listarSucursal) {
-  listarSucursal.listarGet = function (sucursal, tipoAccion, cb) {
+module.exports = function (listarcodigo) {
+  listarcodigo.listarGet = function (codigo, tipoAccion, cb) {
     const main = async () => {
       try {
-        console.log(sucursal, tipoAccion);
+        codigo = codigo === undefined ? "" : codigo;
+        console.log(codigo, tipoAccion);
         var bodyJson;
         console.log(`========== Consultamos a la Base de datos  ==========`);
-        const query = `select * from public.ws_listar_sucursal ('${sucursal}', '${tipoAccion}');`;
+        const query = `select * from public.ws_listar_sucursal ('${codigo}', '${tipoAccion}');`;
         console.log(query);
         const SC = await consultaBD(query);
         console.log(SC);
@@ -46,7 +47,7 @@ module.exports = function (listarSucursal) {
         if (reject) {
           console.log(reject);
         }
-        const db = listarSucursal.dataSource;
+        const db = listarcodigo.dataSource;
         db.connector.query(query, function (err, result) {
           if (err) {
             console.log(err);

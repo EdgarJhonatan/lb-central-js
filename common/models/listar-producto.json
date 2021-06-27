@@ -10,9 +10,9 @@
     "id"
   ],
   "properties": {
-    "producto": {
+    "codigo": {
       "type": "string",
-      "default": "46746907"
+      "default": ""
     },
     "tipoAccion": {
       "type": "string",
@@ -26,7 +26,7 @@
     "listarGet": {
       "accepts": [
         {
-          "arg": "producto",
+          "arg": "codigo",
           "type": "string"
         },
         {

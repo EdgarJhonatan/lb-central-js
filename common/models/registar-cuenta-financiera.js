@@ -8,6 +8,7 @@ module.exports = function (registarCuentaFinanciera) {
         console.log(data);
         console.log(`========== Registramos en la Base de datos ==========`);
         const query = `select * from public.ws_crud_cuentaFinanciera (
+                                    '${data.codigo}',
                                     '${data.cuenta}',
                                     '${data.cuentaInterbancaria}',
                                     '${data.codigoEntidad}',

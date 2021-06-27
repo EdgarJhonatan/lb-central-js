@@ -10,9 +10,9 @@
     "id"
   ],
   "properties": {
-    "cuenta": {
+    "codigo": {
       "type": "string",
-      "default": "46746907"
+      "default": ""
     },
     "tipoAccion": {
       "type": "string",

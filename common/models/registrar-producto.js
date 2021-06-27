@@ -8,6 +8,7 @@ module.exports = function (registrarProducto) {
         console.log(data);
         console.log(`========== Registramos en la Base de datos ==========`);
         const query = `select * from public.ws_crud_producto (
+                                '${data.codigo}',
                                 '${data.producto}',
                                 '${data.articulo}',
                                 '${data.usuario}',
