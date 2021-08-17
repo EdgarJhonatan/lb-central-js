@@ -4,7 +4,7 @@ module.exports = function (listarUsuario) {
   listarUsuario.listarGet = function (codigo, tipoAccion, cb) {
     const main = async () => {
       try {
-        codigo = codigo === undefined ? "" : codigo;
+        codigo = codigo ? codigo : "";
 
         console.log(codigo, tipoAccion);
         var bodyJson;

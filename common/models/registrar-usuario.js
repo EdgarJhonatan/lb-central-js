@@ -3,6 +3,7 @@
 module.exports = function (Registrarusuario) {
   Registrarusuario.RegistrarusuarioPost = function (data, cb) {
     let bodyJson;
+    data.usuario = data.usuario ? data.usuario : "";
     const main = async () => {
       try {
         console.log(data);
